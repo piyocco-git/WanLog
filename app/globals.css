@@ -1,19 +1,83 @@
+
+:root {
+  --color-background: #f7f7f7;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-border: #e5e7eb;
+  --color-primary: #ed5a28;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
-main {
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* アプリ全体 */
+.app {
+  width: 100%;
   min-height: 100vh;
-  padding: 48px;
+  background: var(--color-surface);
+}
+
+/* ホーム画面 */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 96px;
+}
+
+/* 共通カード */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* クイック記録 */
+.quick-record-button {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #374151;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* PC */
+@media (min-width: 768px) {
+  .home-content {
+    padding: 32px;
+    gap: 24px;
+  }
 }
